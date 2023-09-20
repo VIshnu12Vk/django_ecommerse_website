@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'Core_App/css/first_page.css' %}">
+    <div class="products-div-b">
+        <div class="item-listing">
+            {% for p in products %}
+            <div class="product-item">
+                <div class="image-product">
+                   <a href="{% url 'product_detail' p.product_id %}">
+                    <img src="{{p.product_image.url}}" alt="">
+                   </a>
+                </div>
+                <div class="products-btn">
+                    <p class="marg-in">{{p.product_name}}</p>
+                    <p class="marg-in">{{p.marginal_price}}</p>
+                    <p class="marg-in">{{ p.description }}</p>
+                    <div class="btns-buy-cart">
+                        {% if user.is_authenticated %}
+                        <a class="buy-btn" href="{% url 'order' %}">Buy</a>
+                        <a class="cart-btn" href="{% url 'add_cart' p.product_id %}">Cart</a>
+                        {% else %}
+                        <a class="buy-btn" href="{% url 'login' %}">Buy</a>
+                        <a class="cart-btn" href="{% url 'login' %}">Cart</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="screen">
+        <div class="products-div">
+            {% for c in cat %}
+            <div class="item">
+                <a href="{% url 'category_listing' c.cat_id %}">
+                    <img src="{{c.cat_image.url}}" alt="">
+                </a>
+                <div class="desc-cat">
+                    <a href="{% url 'category_listing' c.cat_id %}">{{c.cat_name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

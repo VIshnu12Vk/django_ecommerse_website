@@ -1,0 +1,48 @@
+
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Cart_App/css/cart.css' %}">
+    <div class="screen">
+        <div class="cart-list">
+            {% if not cart_deatil %}
+            <h3>Your Cart is Empty !</h3>
+            {% else %}
+            <h3>Cart List</h3>    
+            {% endif %}
+            {% for b in cart_deatil %}
+            <div class="cart-item">
+                <div class="cart-item-img">
+                    <img src="{{b.product_image.url}}" alt="">
+                </div>
+                <div class="cart-buttons">
+                    <div class="cart-btn-set">
+                        <a class="cart-buy-btn" href="{% url 'order'  %}">Buy</a>
+                        <a class="cart-cart-btn" href="{% url 'remove_cart_item' b %}">Remove</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="cart-suggest">
+            <div class="item-listing">
+                {% for p in sug %}
+                <div class="product-item">
+                    <div class="image-product">
+                        <img src="{{p.product_image.url}}" alt="">
+                    </div>
+                    <div class="products-btn">
+                        <p class="marg-in">{{p.product_name}}</p>
+                        <p class="marg-in">{{p.marginal_price}}</p>
+                        <p class="marg-in">description</p>
+                        <div class="btns-buy-cart">
+                            <a class="buy-btn" href="{% url 'order'  %}">Buy</a>
+                            <a class="cart-btn" href="{% url 'add_cart' p.product_id %}">Cart</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

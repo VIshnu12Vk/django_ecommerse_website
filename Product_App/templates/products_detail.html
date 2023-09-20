@@ -1,0 +1,49 @@
+
+    {% extends "base.html" %}
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Product_App/css/product_details.css' %}">
+    <div class="product-page">
+        <div class="p-i-section">
+            <div class="p-pic-section">
+                <img src="{{product.product_image.url}}" alt="product-png">
+            </div>
+            <ul class="p-d-section">
+                <li><span>{{product.product_name}}</span></li>
+                <li><span>{{product.orginal_price}}</span></li>
+                <li><span>{{product.description}}</span></li>
+                <li>Category</li>
+                <li>Weight</li>
+                <li>Height</li>
+                <li>Material</li>
+                <div class="b-c-buttons">
+                    <a class="b-button" href="{% url 'order' %}">Buy</a>
+                    <a class="c-button" href="#">Cart</a>
+                </div>
+            </ul>
+        </div>
+        <h3>Suggetions</h3>
+        <div class="o-s-section">
+            <div class="slider-sug-card">
+                {% for s in product_obj %}
+                <div class="sug-card">
+                    <img src="{{s.product_image.url}}" alt="">
+                    <div class="sug-details-div">
+                        <div class="sug-btn-card">
+                            {% if user.is_authenticated %}
+                            <a  class="sug-buy" href="{% url 'order' %}">Buy</a>
+                            <a class="sug-cart" href="{% url 'add_cart' p.product_id %}">Add to Cart</a>
+                            {% else %}
+                            <a  class="sug-buy" href="{% url 'login' %}">Buy</a>
+                            <a class="sug-cart" href="{% url 'login' %}">Add to Cart</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+

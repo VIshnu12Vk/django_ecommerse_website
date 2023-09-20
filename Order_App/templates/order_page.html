@@ -1,0 +1,34 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Order_App/css/order.css' %}">
+    
+    <div class="screen-account">
+        <div class="account-details">
+            <h2 class="delivery_header">Delivery Information</h2>
+            <form class="address">
+                <div class="delivery_address">
+                    <p class="">kuttikattu thunditil kanjeetukara po ayroor</p>
+                </div>
+                <div class="address_change">
+                    <button class="change-btn">Change</button>
+                </div>
+            </form>
+            <div class="product_details">
+                <div class="product_img">
+                    <img src="Product .jpg" alt="">
+                </div>
+                <ul class="product_info">
+                    <li>name</li>
+                    <li>price</li>
+                    <li>weight</li>
+                    <li>material</li>
+                </ul>
+            </div>
+            <div class="proceed_btn">
+                <button>proceed</button>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    

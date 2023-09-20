@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'User_Profile_App/css/account_details.css' %}">
+
+    <div class="screen-account">
+        <div class="account-details">
+            <div class="profile-pic">
+                <div class="pic">
+                    <img class="pro-img" src="{{user.user_img.url}}" alt="user logo">
+                </div>
+                <div class="other-details">
+                    <input type="text" placeholder="username"  readonly>
+                    <input type="password" name="" id="" placeholder="password" readonly>
+                </div>
+                <form class="profile-update-btn">
+                    <input class="change-btn" type="button" value="change" name="change">
+                    <input class="save-btn" type="button" value="save" name="save">
+                </form>
+            </div>
+            <div class="profile-details-div">
+                <ul>
+                    <li class="element"><span>{{user.address}}</span></li>
+                    <li class="element"><span>{{user.email}}</span></li>
+                    <li class="element"><span>{{user.phone}}</span></li>
+                    <li class="element"><span>{{user.alt_phone}}</span></li>
+                    <li class="element"><span>{{user.pincode}}</span></li>
+                    <li class="element"><span>{{user.gender}}</span></li>
+                </ul>
+                <div class="change-address">
+                    <a class="address-change" href="">Change Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

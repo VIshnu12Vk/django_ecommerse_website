@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
+.product-page{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aqua; */
+}
+.p-i-section{
+    display: flex;
+    width: 70vw;
+    height: 60vh;
+    margin-top: 10px;
+}
+.p-pic-section{
+    width: 50%;
+    height: 100%;
+}
+.p-pic-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.p-d-section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    list-style: none;
+    box-shadow:  0 0 3px #000;
+    height: 100%;
+}
+.p-d-section li{
+    margin-left: 10%;
+    margin-top: 10px;
+}
+.b-c-buttons{
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+}
+.b-button{
+    background-color: rgb(204, 230, 230);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.c-button{
+    background-color: rgb(185, 247, 247);
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+h3{
+    background-color: rgb(246, 248, 248);
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+}
+.o-s-section{
+    /* background-color: rgb(1, 231, 231); */
+    height: auto;
+    flex: 1;
+}
+.slider-sug-card{
+    width: 80vw;
+    height: 30vh;
+    margin-bottom: 10px;
+    display: flex;
+    overflow-x: none;
+    overflow-y: scroll;    
+}
+.sug-card{
+    width: 180px;
+    height: 95%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    box-shadow:  0 0 3px #000;
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+.sug-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.sug-details-div{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 60%;
+    bottom: 0px;
+    background-color: rgb(3, 3, 3);
+    opacity: 0.5;
+    border-radius: 5px;
+}
+.sug-btn-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.sug-buy{
+    margin: 5px auto;
+    padding: 5px 10px;
+    background-color: rgb(204, 230, 230);
+    text-decoration: none;
+    border-radius: 5px;
+}
+.sug-cart{
+    padding: 5px 10px;
+    background-color: rgb(185, 247, 247);
+    text-decoration: none;
+    border-radius: 5px;
+}

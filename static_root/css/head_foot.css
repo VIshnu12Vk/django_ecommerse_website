@@ -1,0 +1,136 @@
+:root {
+    --rose-water: #637580;
+    --saga-greeen: #9DA993;
+    --misty-blue: #6adbf1;
+    --nude: #7db7da;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* navbar total */
+.navbar{
+    background-color: var(--rose-water);
+    display: flex;
+    justify-content: space-between;
+}
+/* navigation left */
+.navbar-left{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-button{
+    border-radius: 5px;
+    background-color: var(--misty-blue);
+}
+.login-button{
+    border-radius: 5px;
+    background-color: rgb(161, 165, 164);
+}
+/* navigation right */
+.navbar-right{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+}
+
+.margins{
+    margin: 20px;
+}
+/* search box  with button*/
+.search-box{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+.search-btn{
+    background-color: var(--misty-blue);
+    
+}
+.search-box input[type="text"]
+{
+    width: 70%;
+    border-radius: 5px;
+}
+.btn-padding{
+    padding: 5px 10px;
+}
+.left-align-btn{
+    margin-right: 80%;
+}
+.right-align-btn{
+    margin-left: 30%;
+}
+.navbar-right > a{
+    background-color: var(--nude);
+}
+.search-box input[type="button"]
+{
+    background-color: var(--misty-blue);
+    padding: 0 5px;
+    border: 0;
+    border-radius: 5px;
+}
+.footer{
+    background-color: var(--rose-water);
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.help-link{
+    margin-left: 5%;
+}
+.other-link{
+    margin-right: 5%;
+}
+.search-box input[type="button"]:hover
+{
+    background-color: #95b6bd;
+    
+}
+.navbar-right > a:hover{
+    background-color: #95b6bd;
+}
+.cart-button:hover{
+    background-color: #95b6bd;
+}
+@media (max-width: 800px) {
+    .navbar{
+        background-color: var(--rose-water);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navbar-right{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 800px) {
+    .navbar-left{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-align-btn{
+        margin-right: 10%;
+    }
+    .right-align-btn{
+        margin-left: 5%;
+    }
+    .search-box{
+
+        width: 80%;
+    }
+    
+}

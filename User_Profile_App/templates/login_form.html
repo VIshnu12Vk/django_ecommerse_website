@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'User_Profile_App/css/login_form.css' %}">
+    <div class="screen">
+        <div class="card">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit"
+                class="btn btn-primary">
+                Login
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

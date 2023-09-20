@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+.screen-account{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.account-details{
+    margin-top: 50px;
+    width: 80vw;
+    height: 500px;
+    background-color: azure;
+    display: flex;
+    justify-content: space-between;
+    box-shadow:  0 0 3px #000;
+    border-radius: 5px;
+}
+.profile-pic{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.pic{
+    width: 100%;
+    height: 40%;
+}
+.pro-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 40%;
+}
+.other-details{
+    display: flex;
+    flex-direction: column;
+}
+.other-details input[type="text"],input[type="password"]
+{    
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 10px;
+    height: 30px;
+    
+}
+.profile-update-btn{
+    margin-top: 10px;
+}
+.profile-update-btn input[type="button"]
+{
+    padding: 5px 15px;
+}
+.change-btn{
+    margin-left: 10%;
+    background-color: rgb(204, 230, 230);
+    border-radius: 5px;
+}
+.save-btn{
+    background-color: rgb(185, 247, 247);
+    border-radius: 5px;
+}
+.profile-details-div{
+    width: 50%;
+}
+ul{
+    margin-left: 10%;
+    /* border-style: dashed; */
+    margin-top: 10px;
+    margin-right: 10px;
+    list-style: none;
+}
+.element{
+    margin-top: 10px;
+}
+.change-address{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.address-change{
+    padding: 5px 15px;
+    background-color: rgb(204, 230, 230);
+    border-radius: 5px;
+    text-decoration: none;
+}

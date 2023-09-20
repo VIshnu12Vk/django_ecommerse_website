@@ -1,0 +1,27 @@
+    {% extends "base.html" %}
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Product_App/css/cat_product_list.css'  %}">
+    <div class="products-div-b">
+        <div class="item-listing">
+            {% for c in Product_cat %}
+            <div class="product-item">
+                <div class="image-product">
+                    <a href="{% url 'product_detail' c.product_id %}">
+                    <img src="{{c.product_image.url}}" alt="">
+                   </a>
+                </div>
+                <div class="products-btn">
+                    <p class="marg-in">{{c.product_name}}</p>
+                    <p class="marg-in">{{c.marginal_price}}</p>
+                    <p class="marg-in">{{c.description }}</p>
+                    <div class="btns-buy-cart">
+                        <a class="buy-btn" href="{% url 'order' %}">Buy</a>
+                        <a class="cart-btn" href="">Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

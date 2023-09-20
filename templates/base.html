@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static  'css/head_foot.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            {% if user.is_authenticated %}
+            <a class="logo" href="{% url 'user_account' %}"><span>{{user.username}}</span></a>
+            {% else %}
+            <a class="logo" href="#">Selling</a>
+            {% endif %}
+            <div class="nav-buttons">
+                {% if user.is_authenticated %}
+                <a class="login" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="login" href="{% url 'login' %}">Login</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <a class="cart" href="{% url 'cart' %}">Cart</a>
+                {% else %}
+                <a class="cart" href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="nav-right">
+            <form class="search" action="{% url 'products' %}">
+                <input type="text"  name="Search_item">
+                <button  type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock  %}
+    <footer class="foot">
+        <div class="foot-left">
+            <a href="#">HELP</a>
+        </div>
+        <div class="foot-right">
+            <ul class="list">
+                <li><a href="#">Email</a></li>
+                <li>Telephone</li>
+                <li>Address</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
